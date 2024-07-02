@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "path": ".",
+    },
+  ],
+  "extensions": {
+    "recommendations": ["esbenp.prettier-vscode", "ms-python.python", "ms-python.black-formatter", "ms-python.vscode-pylance"],
+  },
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.encoding": "utf8",
+    "files.eol": "auto",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "search.useIgnoreFiles": true,
+    "search.exclude": {
+      "**/*-lock.json": true,
+      "**/*.lock": true,
+      "**/*cache*": true,
+      "**/vendor/*": true,
+      "**/node_modules/*": true,
+    },
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter",
+    },
+  },
+}

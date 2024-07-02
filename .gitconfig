@@ -1,0 +1,47 @@
+# Configuration for git
+# References:
+#   https://git-scm.com/docs/git-config
+
+# core variables
+[core]
+	# Don't trust file modes
+	filemode = false
+
+  # Line endings should always be Linux
+  eol = lf
+
+  # ensure line endings in files you checkout are correct for Windows
+  autocrlf = false
+
+  # The repository is shared with other developers
+  sharedRepository = true
+
+[pull]
+  # Do not create an extra merge commit when merging a commit that is a descendant of the current commit. Instead, the tip of the current branch is fast-forwarded
+  ff = true
+
+  # Rebase allows you to integrate the changes from one branch into another
+	rebase = false
+
+[fetch]
+  # Remove stale branches by default when fetching
+  prune = true
+
+[diff]
+  # adds extra colors when running git diff to show blocks of lines that remain unchanged but have moved in the file
+  colorMoved = zebra
+
+[rebase]
+  # automatically create a temporary stash entry before the operation begins, and apply it after the operation ends
+  autostash = true
+
+  # enable --autosquash option by default
+  autoSquash = true
+
+[merge]
+  # causes an unqualified git merge to merge the current branch's configured upstream branch, rather than being an error
+  defaultToUpstream = true
+
+[branch]
+  # newly-created branches whose start point is a branch will be configured to have the start point branch as their upstream
+  autosetupmerge = always

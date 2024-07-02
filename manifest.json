@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "DOMinator",
+  "version": "1.0",
+  "description": "Your friendly neighborhood DOM analyzer and web security sidekick!",
+  "permissions": ["activeTab", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Toggle Companion",
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "favicon/favicon-16x16.png",
+      "32": "favicon/favicon-32x32.png",
+      "96": "favicon/android-chrome-96x96.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["src/character/character_sheet.css", "src/character/speech_bubble.css"],
+      "js": ["src/character/options.js", "src/character/platforms.js", "src/events/mouse.js", "src/dominator/dominator.js", "src/character/animate.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/character/character_sheet.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "options_page": "src/dominator/options.html"
+}

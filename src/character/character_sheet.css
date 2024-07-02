@@ -1,0 +1,73 @@
+#pixel-art-character {
+  position: fixed;
+  user-select: none;
+  cursor: pointer;
+  width: 96px;
+  height: 128px;
+  background-image: url('chrome-extension://__MSG_@@extension_id__/src/character/character_sheet.png');
+  background-repeat: no-repeat;
+  z-index: 9999;
+}
+
+#pixel-art-character.flip {
+  transform: scaleX(-1);
+}
+
+.sprite {
+  width: 96px;
+  height: 128px;
+  background-image: url('chrome-extension://__MSG_@@extension_id__/src/character/character_sheet.png');
+  background-repeat: no-repeat;
+}
+
+.idle { background-position: 0 0; }
+.jump { background-position: -96px 0; }
+.fall { background-position: -192px 0; }
+.duck { background-position: -288px 0; }
+.hit { background-position: -384px 0; }
+.climb0 { background-position: -480px 0; }
+.climb1 { background-position: -576px 0; }
+.cheer0 { background-position: -672px 0; }
+.cheer1 { background-position: -768px 0; }
+.back { background-position: 0 -128px; }
+.slide { background-position: -96px -128px; }
+.interact { background-position: -192px -128px; }
+.switch0 { background-position: -288px -128px; }
+.switch1 { background-position: -384px -128px; }
+.kick { background-position: -480px -128px; }
+.side { background-position: -576px -128px; }
+.shove { background-position: -672px -128px; }
+.shoveBack { background-position: -768px -128px; }
+.talk { background-position: 0 -256px; }
+.attackKick { background-position: -96px -256px; }
+.hang { background-position: -192px -256px; }
+.hold { background-position: -288px -256px; }
+.show { background-position: -384px -256px; }
+.behindBack { background-position: -480px -256px; }
+.run0 { background-position: -576px -256px; }
+.run1 { background-position: -672px -256px; }
+.run2 { background-position: -768px -256px; }
+.attack0 { background-position: 0 -384px; }
+.attack1 { background-position: -96px -384px; }
+.attack2 { background-position: -192px -384px; }
+.think { background-position: -288px -384px; }
+.down { background-position: -384px -384px; }
+.drag { background-position: -480px -384px; }
+.hurt { background-position: -576px -384px; }
+.wide { background-position: -672px -384px; }
+.rope { background-position: -768px -384px; }
+.walk0 { background-position: 0 -512px; }
+.walk1 { background-position: -96px -512px; }
+.walk2 { background-position: -192px -512px; }
+.walk3 { background-position: -288px -512px; }
+.walk4 { background-position: -384px -512px; }
+.walk5 { background-position: -480px -512px; }
+.walk6 { background-position: -576px -512px; }
+.walk7 { background-position: -672px -512px; }
+.fallDown { background-position: -768px -512px; }
+
+/* Debug styles - you can remove these once everything is working */
+/* #pixel-art-character {
+  border: 2px solid black;
+  opacity: 0.7;
+} */
