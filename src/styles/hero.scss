@@ -4,9 +4,39 @@
   cursor: pointer;
   width: 96px;
   height: 128px;
-  background-image: url('chrome-extension://__MSG_@@extension_id__/src/character/character_sheet.png');
+  background-image: url('chrome-extension://__MSG_@@extension_id__/character_sheet.png');
   background-repeat: no-repeat;
   z-index: 9999;
+
+  #speech-bubble {
+    display: none;
+    position: relative;
+    background: #ffffff;
+    border-radius: 0.4em;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #000;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 20px solid transparent;
+      border-top-color: #ffffff;
+      border-bottom: 0;
+      margin-left: -20px;
+      margin-bottom: -20px;
+    }
+
+    &:before {
+      border-top-color: #000;
+      margin-bottom: -22px;
+    }
+  }
 }
 
 #pixel-art-character.flip {
@@ -16,7 +46,7 @@
 .sprite {
   width: 96px;
   height: 128px;
-  background-image: url('chrome-extension://__MSG_@@extension_id__/src/character/character_sheet.png');
+  background-image: url('chrome-extension://__MSG_@@extension_id__/character_sheet.png');
   background-repeat: no-repeat;
 }
 

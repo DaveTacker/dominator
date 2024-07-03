@@ -5,11 +5,25 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "prettier": "3.3.2",
-    "prettier-plugin-organize-imports": "^3.2.4"
+  "scripts": {
+    "build": "webpack --config webpack.config.js --mode production",
+    "watch": "webpack --config webpack.config.js --watch --mode development"
   },
-  "dependencies": {
-    "bootstrap": "^5.3.3"
+  "devDependencies": {
+    "@types/bootstrap": "^5.2.10",
+    "@types/chrome": "^0.0.268",
+    "bootstrap": "^5.3.3",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
+    "mini-css-extract-plugin": "^2.9.0",
+    "prettier": "3.3.2",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "sass": "^1.77.6",
+    "sass-loader": "^14.2.1",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.5.3",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
   }
 }

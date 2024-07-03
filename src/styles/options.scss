@@ -1,0 +1,18 @@
+.toast-header {
+  .checkmark {
+    padding-left: 2px;
+    line-height: 16px;
+    width: 15px;
+    height: 15px;
+  }
+}
+
+#analysisHistory pre,
+#immediateCheckHistory pre {
+  overflow: auto;
+  margin: 0;
+  padding: 1em;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

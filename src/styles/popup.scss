@@ -1,0 +1,124 @@
+body {
+  width: 300px;
+  font-family: Arial, sans-serif;
+  padding: 10px;
+}
+
+#comic-container {
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 0px #888888;
+
+  h1 {
+    color: #4a4a4a;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 0;
+    text-shadow: 2px 2px 0px #ffff00;
+  }
+
+  #robot-container {
+    position: relative;
+    margin-bottom: 20px;
+
+    #robot-image {
+      width: 100px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #speech-bubble {
+      position: relative;
+      background: #ffffff;
+      border-radius: 0.4em;
+      padding: 10px;
+      margin-top: 10px;
+      border: 2px solid #000;
+
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-top-color: #ffffff;
+        border-bottom: 0;
+        margin-left: -20px;
+        margin-bottom: -20px;
+      }
+
+      &:before {
+        border-top-color: #000;
+        margin-bottom: -22px;
+      }
+
+      #report {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 3px 3px 0px #45a049;
+
+    &:active {
+      box-shadow: 1px 1px 0px #45a049;
+      transform: translate(2px, 2px);
+    }
+
+    &:disabled {
+      background-color: #cccccc;
+      color: #666666;
+      box-shadow: 3px 3px 0px #999999;
+      cursor: not-allowed;
+    }
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    button {
+      margin: 0 5px;
+    }
+  }
+}
+
+@keyframes ellipsis {
+  0% {
+    content: '.';
+  }
+  33% {
+    content: '..';
+  }
+  66% {
+    content: '...';
+  }
+  100% {
+    content: '';
+  }
+}
+
+.ellipsis {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: ellipsis 1s infinite;
+}

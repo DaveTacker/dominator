@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <title>DOMinator Options</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <span class="checkmark rounded me-2 bg-primary text-white">&check;</span>
+          <strong class="me-auto">DOMinator</strong>
+          <small>Now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">Settings Saved!</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="d-flex flex-column flex-shrink-0 bg-light" style="height: 100vh">
+            <!-- Nav -->
+            <ul class="nav nav-pills nav-fill flex-column mb-auto" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link text-start active" id="hero-tab" data-bs-toggle="tab" data-bs-target="#hero" type="button" role="tab" aria-controls="hero" aria-selected="true">
+                  Character
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link text-start" id="api-tab" data-bs-toggle="tab" data-bs-target="#api" type="button" role="tab" aria-controls="api" aria-selected="false">API</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link text-start" id="analysis-tab" data-bs-toggle="tab" data-bs-target="#analysis" type="button" role="tab" aria-controls="analysis" aria-selected="false">
+                  Analysis History
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link text-start" id="report-tab" data-bs-toggle="tab" data-bs-target="#report" type="button" role="tab" aria-controls="report" aria-selected="false">
+                  Report History
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-9">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <!-- Panes -->
+                <div class="tab-content">
+                  <div class="tab-pane active" id="hero" role="tabpanel" aria-labelledby="hero-tab" tabindex="0">
+                    <h2>Hero Options</h2>
+                    <form id="heroForm">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="heroEnabled" name="heroEnabled" />
+                        <label class="form-check-label" for="heroEnabled"> Enable Hero </label>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="speed" class="form-label">Movement Speed</label>
+                        <select id="speed" class="form-select" aria-label="The movement speed of the hero">
+                          <option value="slow">Slow</option>
+                          <option value="normal" selected>Normal</option>
+                          <option value="fast">Fast</option>
+                        </select>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="jumpHeight" class="form-label">Jump Height</label>
+                        <select id="jumpHeight" class="form-select" aria-label="How high the hero can jump">
+                          <option value="low">Low</option>
+                          <option value="normal" selected>Normal</option>
+                          <option value="high">High</option>
+                        </select>
+                      </div>
+                      <hr />
+                      <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="reset" class="btn btn-light">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane" id="api" role="tabpanel" aria-labelledby="api-tab" tabindex="1">
+                    <h1>API Settings</h1>
+                    <form id="apiForm">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="apiEnabled" name="apiEnabled" />
+                        <label class="form-check-label" for="apiEnabled"> Consult with LLM </label>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="apiUrl" class="form-label">OpenAI (compatable) API URL</label>
+                        <input type="url" class="form-control" id="apiUrl" name="apiUrl" placeholder="https://api.openai.com/v1/chat/completions" />
+                        <div class="form-text">The base URL for the OpenAI API or any other locally hosted solution. For example: <code>http://ollama:11434/api/chat</code></div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="apiKey" class="form-label">API Key</label>
+                        <input type="text" class="form-control" id="apiKey" name="apiKey" placeholder="sk-..." />
+                        <div class="form-text">Your API key for the API.</div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="model" class="form-label">AI Model</label>
+                        <input type="text" class="form-control" id="model" name="model" placeholder="gpt-3.5-turbo" />
+                        <div class="form-text">The model to use for the API. For example: <code>gpt-3.5-turbo</code>, <code>gpt-4o</code>, <code>llama3</code></div>
+                      </div>
+                      <hr />
+                      <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="reset" class="btn btn-light">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane" id="analysis" role="tabpanel" aria-labelledby="analysis-tab" tabindex="2">
+                    <h1>LLM Analysis</h1>
+                    <p class="text-muted">This is a history of all the DOM analysis by a LLM.</p>
+                    <div id="analysisHistory"></div>
+                  </div>
+                  <div class="tab-pane" id="report" role="tabpanel" aria-labelledby="report-tab" tabindex="3">
+                    <h1>Local Analysis</h1>
+                    <p class="text-muted">This is a history of all the security checks that have been performed on the DOM.</p>
+                    <div id="immediateCheckHistory"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="options.js"></script>
+    <script src="bootstrap.min.js"></script>
+  </body>
+</html>
